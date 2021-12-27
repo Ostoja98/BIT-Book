@@ -1,0 +1,14 @@
+.ModalDetails {
+  width: 500px;
+  height: 500px;
+  background-color: springgreen;
+  display: flex;
+  flex-direction: column;
+}
+
+.nameModal {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+}

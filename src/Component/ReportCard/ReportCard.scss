@@ -1,0 +1,19 @@
+.ReportCard {
+  height: 50px;
+  border: 1px solid black;
+  width: 80%;
+ 
+}
+.slika {
+  img {
+    height: 100%;
+    border-radius: 20px;
+  }
+}
+.detalji {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+}

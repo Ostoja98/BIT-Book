@@ -1,0 +1,14 @@
+.Wizard {
+  display: flex;
+  border: rgb(0, 0, 0) solid 1px;
+  height: 80vh;
+}
+
+.left {
+  width: 35%;
+  border: solid 1px red;
+}
+.right {
+  display: flex;
+  align-items: center;
+}
