@@ -13,7 +13,6 @@ import {
   Route,
   Switch,
 } from "react-router-dom";
-import ModalLog from "./Component/ModalLog/ModalLog";
 
 function App() {
   const [company, setCompany] = useState([]);
@@ -72,7 +71,6 @@ function App() {
               fetchResults={allFetchResults}
               isLogin={isLogin}
               setIsLogin={setIsLogin}
-
             />
           </Route>
           <Route path="/detailsPage/:id">
@@ -88,7 +86,6 @@ function App() {
               setIsLogin={setIsLogin}
               setShowLog={setShowLog}
               showLog={showLog}
-
             />
           </Route>
           <Route path="/adminPage">

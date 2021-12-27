@@ -1,14 +1,41 @@
 .Wizard {
   display: flex;
   border: rgb(0, 0, 0) solid 1px;
-  height: 80vh;
+  min-height: calc(100vh - 37px - 37px - 16px);
 }
 
 .left {
   width: 35%;
   border: solid 1px red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .stage {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid red;
+    padding-left: 150px;
+    p {
+      padding: 10px 0;
+      font-size: 25px;
+    }
+    span {
+      border: 1px solid black;
+      border-radius: 100%;
+      font-size: 25px;
+      padding: 5px 10px;
+      margin-right: 5px;
+    }
+  }
+  .picked {
+    padding: 0 0 100px 150px;
+    font-size: 20px;
+  }
 }
 .right {
   display: flex;
   align-items: center;
+  width: 100%;
 }

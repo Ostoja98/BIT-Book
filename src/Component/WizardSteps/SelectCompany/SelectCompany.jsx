@@ -1,9 +1,11 @@
 import React from "react";
 import "./SelectCompany.scss";
 import ReportCompany from "../../ReportCompany/ReportCompany";
+import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
+
 const SelectCompany = (props) => {
   return (
-    <>
+    <div className="wizardpage2">
       <div className="searchWiz">
         <input
           type="text"
@@ -31,25 +33,29 @@ const SelectCompany = (props) => {
               />
             );
           })}
-        <button
-          onClick={() => {
-            props.setSearchWiz("");
-            props.setPageWiz(props.pageWiz - 1);
-          }}
-        >
-          Back
-        </button>
-        <button
-          onClick={() => {
-            props.setSearchWiz("");
-            props.setPageWiz(props.pageWiz + 1);
-          }}
-          disabled={props.selectedCompany === ""}
-        >
-          Next
-        </button>
+        <div className="btn">
+          <button
+            className="btnwiz"
+            onClick={() => {
+              props.setSearchWiz("");
+              props.setPageWiz(props.pageWiz - 1);
+            }}
+          >
+            <FaArrowCircleLeft />
+          </button>
+          <button
+            className="btnwiz"
+            onClick={() => {
+              props.setSearchWiz("");
+              props.setPageWiz(props.pageWiz + 1);
+            }}
+            disabled={props.selectedCompany === ""}
+          >
+            <FaArrowCircleRight />
+          </button>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 

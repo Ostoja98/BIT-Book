@@ -51,6 +51,7 @@ const AdminPage = (props) => {
         <ModalDetails
           pickedElement={props.pickedElement}
           setShowModal={props.setShowModal}
+          fetchResults={props.fetchResults}
         />
       )}
     </div>

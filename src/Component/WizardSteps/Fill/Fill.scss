@@ -1,0 +1,30 @@
+.Fill {
+  width: 100%;
+  height: 100%;
+  padding: 150px;
+
+  .input {
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+  }
+  .text {
+    border: 1px solid green;
+
+    textarea {
+      width: 100%;
+      height: 300px;
+    }
+  }
+
+  .btnwiz3 {
+    border: 1px solid red;
+    width: 150px;
+    margin: 0 auto;
+
+    button {
+      margin: 0 15px;
+    }
+  }
+}

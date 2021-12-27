@@ -2,6 +2,8 @@ import moment from "moment";
 import React, { useState } from "react";
 import "./Fill.scss";
 import { useHistory } from "react-router-dom";
+import { FaArrowCircleLeft } from "react-icons/fa";
+import { IoMdPersonAdd } from "react-icons/io";
 
 const Fill = (props) => {
   const [interviewDate, setInterviewDate] = useState("");
@@ -61,40 +63,46 @@ const Fill = (props) => {
             rows="10"
             onChange={(e) => setNote(e.target.value)}
           ></textarea>
-          <button
-            type="button"
-            onClick={() => {
-              fetch(`http://localhost:3333/api/reports`, {
-                method: "POST",
-                headers: {
-                  Accept: "application/json",
-                  "Content-Type": "application/json",
-                  Authorization: `Bearer ${token}`,
-                },
-                body: JSON.stringify({
-                  candidateId: props.selectedCandidate.id,
-                  candidateName: props.selectedCandidate.name,
-                  companyId: props.selectedCompany.id,
-                  companyName: props.selectedCompany.name,
-                  interviewDate: interviewDate,
-                  note: note,
-                  phase: phase,
-                  status: status,
-                }),
-              }).then((res) => {
-                console.log(res);
-                console.log(token);
-                props.setReload(!props.reload);
-                history.push("/adminPage");
-              });
-            }}
-          >
-            Create
-          </button>
+          <div className="btnwiz3">
+            <button
+              className="btnwiz"
+              onClick={() => props.setPageWiz(props.pageWiz - 1)}
+            >
+              <FaArrowCircleLeft />
+            </button>
+            <button
+              className="btnwiz"
+              type="button"
+              onClick={() => {
+                fetch(`http://localhost:3333/api/reports`, {
+                  method: "POST",
+                  headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
+                  },
+                  body: JSON.stringify({
+                    candidateId: props.selectedCandidate.id,
+                    candidateName: props.selectedCandidate.name,
+                    companyId: props.selectedCompany.id,
+                    companyName: props.selectedCompany.name,
+                    interviewDate: interviewDate,
+                    note: note,
+                    phase: phase,
+                    status: status,
+                  }),
+                }).then((res) => {
+                  console.log(res);
+                  console.log(token);
+                  props.setReload(!props.reload);
+                  history.push("/adminPage");
+                });
+              }}
+            >
+              <IoMdPersonAdd />
+            </button>
+          </div>
         </label>
-        <button onClick={() => props.setPageWiz(props.pageWiz - 1)}>
-          Back
-        </button>
       </div>
     </div>
   );

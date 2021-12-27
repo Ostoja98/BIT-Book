@@ -1,10 +1,12 @@
 import React from "react";
 import "./SelectCard.scss";
 import ReportCard from "../../ReportCard/ReportCard";
+//FaArrowCircleRight
+import { FaArrowCircleRight } from "react-icons/fa";
 
 const SelectCard = (props) => {
   return (
-    <>
+    <div className="wizardpage1">
       <div className="searchWiz">
         <input
           type="text"
@@ -32,16 +34,17 @@ const SelectCard = (props) => {
             );
           })}
         <button
+          className="btnwiz"
           onClick={() => {
             props.setSearchWiz("");
             props.setPageWiz(props.pageWiz + 1);
           }}
           disabled={props.selectedCandidate === ""}
         >
-          Next
+          <FaArrowCircleRight />
         </button>
       </div>
-    </>
+    </div>
   );
 };
 

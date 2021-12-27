@@ -7,14 +7,13 @@ import { Link } from "react-router-dom";
 const HomePage = (props) => {
   const [searchHome, setSearchHome] = useState("");
   return (
-    <div>
+    <div className="homepage">
       {props.showLog && (
         <ModalLog
           setShowLog={props.setShowLog}
           showLog={props.showLog}
           isLogin={props.isLogin}
           setIsLogin={props.setIsLogin}
-          clickedButton={props.clickedButton}
         />
       )}
 

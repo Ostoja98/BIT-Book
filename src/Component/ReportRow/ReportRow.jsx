@@ -1,6 +1,7 @@
 import React from "react";
 import "./ReportRow.scss";
 import moment from "moment";
+import { BsEye } from "react-icons/bs";
 
 const ReportRow = (props) => {
   console.log(props.e);
@@ -9,16 +10,18 @@ const ReportRow = (props) => {
       <tr>
         <td>{props.e.companyName}</td>
         <td>{moment(props.e.interviewDate).format("DD-MM-YYYY")}</td>
-        <td>{props.e.status}</td>
-        <button
-          className="oko"
-          onClick={() => {
-            props.setPickedElement(props.e);
-            props.setShowModal(true);
-          }}
-        >
-          oko
-        </button>
+        <td>
+          {props.e.status}
+          <button
+            className="oko"
+            onClick={() => {
+              props.setPickedElement(props.e);
+              props.setShowModal(true);
+            }}
+          >
+            <BsEye />
+          </button>
+        </td>
       </tr>
     </>
   );

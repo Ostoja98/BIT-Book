@@ -1,12 +1,20 @@
-.reportRow{
-    border: 1px solid coral;
-    width: 90%;
-    height: 400px;
-  
+.reportRow {
+  border: 1px solid coral;
+  width: 90%;
+  height: 400px;
 }
 
+.oko {
+  width: 20px;
+  height: 20px;
+  //   font-size: 30px;
+  position: absolute;
+  right: 0px;
+}
 
-.oko{
-    width: 20px;
-    height: 20px;
+td {
+  height: 30px;
+  border: 2px solid black;
+  border-top: 0;
+  border-right: 0;
 }

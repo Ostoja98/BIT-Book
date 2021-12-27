@@ -3,7 +3,16 @@
   justify-content: space-between;
 }
 
+.homepage {
+  background-color: aqua;
+  min-height: calc(100vh - (37px + 37px + 16px));
+  border: 1px solid red;
+}
+
 .CardList {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 70px 0;
+  border: 1px solid red;
 }

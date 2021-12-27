@@ -12,16 +12,18 @@ const Wizard = (props) => {
   return (
     <div className="Wizard">
       <div className="left">
-        <p>
-          <span>1</span>Select Candidate
-        </p>
-        <p>
-          <span>2</span>Select Company
-        </p>
-        <p>
-          <span>3</span>Fill Report Details
-        </p>
-        <div>
+        <div className="stage">
+          <p>
+            <span>1</span>Select Candidate
+          </p>
+          <p>
+            <span>2</span>Select Company
+          </p>
+          <p>
+            <span>3</span>Fill Report Details
+          </p>
+        </div>
+        <div className="picked">
           {pageWiz >= 1 && (
             <>
               <p>Selected Candidate</p>

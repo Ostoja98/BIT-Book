@@ -4,6 +4,7 @@ import ModalDetails from "../../Component/ModalDetails/ModalDetails";
 import ReportRow from "../../Component/ReportRow/ReportRow";
 import { useParams } from "react-router-dom";
 import ModalLog from "../../Component/ModalLog/ModalLog";
+import moment from "moment";
 
 const DetailsPage = (props) => {
   // const [candidate, setCandidate] = useState();
@@ -15,6 +16,7 @@ const DetailsPage = (props) => {
   let candidate = props.fetchResults[1].find((e) => {
     return e.id == id;
   });
+  console.log(candidate);
   if (candidate)
     return (
       <>
@@ -28,7 +30,7 @@ const DetailsPage = (props) => {
           />
         )}
 
-        <div className="CandidateCardContainer">
+        <div className="candidateCardContainer">
           {props.showModal && (
             <ModalDetails
               fetchResults={props.fetchResults}
@@ -44,13 +46,27 @@ const DetailsPage = (props) => {
             </div>
 
             <div className="Candidateinfo">
-              <div> {candidate.name} </div>
-              <div> </div>
+              <div>
+                <p> Name: </p>
+                <h2>{candidate.name}</h2>
+              </div>
+              <div>
+                <p> Email: </p>
+                <h2>{candidate.email}</h2>
+              </div>
+
+              <div>
+                <p>Date of Birth:</p>
+                <h2>{moment(candidate.birthday).format("DD.MM.YYYY")}</h2>
+              </div>
+              <div>
+                <p>Education:</p>
+                <h2>{candidate.education}</h2>
+              </div>
             </div>
           </div>
+          <h3>Reports</h3>
           <div className="CandidateTable">
-            <h1>report</h1>
-
             <table>
               <tr>
                 <th>Company</th>

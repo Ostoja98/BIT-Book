@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./ModalLog.scss";
 import { useHistory } from "react-router-dom";
+import { FaUserTie } from "react-icons/fa";
 
 const ModalLog = (props) => {
   const [mail, setMail] = useState("");
@@ -18,13 +19,16 @@ const ModalLog = (props) => {
     <div className="ModalContainer">
       <div className="ModalLogIn">
         <button
+          className="ugasi"
           onClick={() => {
             props.setShowLog(false);
           }}
         >
           X
         </button>
-        <h3>LOG IN</h3>
+        <h3>
+          LOGIN <FaUserTie />{" "}
+        </h3>
         <input
           type="text"
           placeholder="Username"
@@ -53,7 +57,7 @@ const ModalLog = (props) => {
               });
           }}
         >
-          Log In
+          LogIn
         </button>
       </div>
     </div>
