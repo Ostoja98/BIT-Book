@@ -28,7 +28,7 @@ const Wizard = (props) => {
             </p>
           ) : (
             <p>
-              <span>2</span>Select Candidate
+              <span>2</span>Select Company
             </p>
           )}
           {pageWiz === 2 ? (
@@ -37,7 +37,7 @@ const Wizard = (props) => {
             </p>
           ) : (
             <p>
-              <span>3</span>Select Candidate
+              <span>3</span>Fill Report Details
             </p>
           )}
         </div>
