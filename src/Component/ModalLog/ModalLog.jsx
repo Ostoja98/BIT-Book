@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import "./ModalLog.scss";
 import { useHistory } from "react-router-dom";
 import { FaUserTie } from "react-icons/fa";
+import { GrClose } from "react-icons/gr";
 
 const ModalLog = (props) => {
   const [mail, setMail] = useState("");
   const [pass, setPassword] = useState("");
-  const [timesTried, changeTimesTried] = useState(true);
+  const [timesTried, changeTimesTried] = useState(false);
 
   const close = () => {
     if (!(props.isLogin == "undefined" || props.isLogin == null)) {
@@ -14,6 +15,7 @@ const ModalLog = (props) => {
     }
   };
   close();
+
   const history = useHistory();
   return (
     <div className="ModalContainer">
@@ -24,10 +26,10 @@ const ModalLog = (props) => {
             props.setShowLog(false);
           }}
         >
-          X
+          <GrClose />
         </button>
         <h3>
-          LOGIN <FaUserTie />{" "}
+          LOGIN <FaUserTie />
         </h3>
         <input
           type="text"

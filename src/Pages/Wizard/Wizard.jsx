@@ -13,15 +13,33 @@ const Wizard = (props) => {
     <div className="Wizard">
       <div className="left">
         <div className="stage">
-          <p>
-            <span>1</span>Select Candidate
-          </p>
-          <p>
-            <span>2</span>Select Company
-          </p>
-          <p>
-            <span>3</span>Fill Report Details
-          </p>
+          {pageWiz === 0 ? (
+            <p style={{ color: "red" }}>
+              <span style={{ borderColor: "red" }}>1</span>Select Candidate
+            </p>
+          ) : (
+            <p>
+              <span>1</span>Select Candidate
+            </p>
+          )}
+          {pageWiz === 1 ? (
+            <p style={{ color: "red" }}>
+              <span style={{ borderColor: "red" }}>2</span>Select Company
+            </p>
+          ) : (
+            <p>
+              <span>2</span>Select Candidate
+            </p>
+          )}
+          {pageWiz === 2 ? (
+            <p style={{ color: "red" }}>
+              <span style={{ borderColor: "red" }}>3</span>Fill Report Details
+            </p>
+          ) : (
+            <p>
+              <span>3</span>Select Candidate
+            </p>
+          )}
         </div>
         <div className="picked">
           {pageWiz >= 1 && (
