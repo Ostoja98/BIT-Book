@@ -65,10 +65,10 @@ const DetailsPage = (props) => {
               </div>
             </div>
           </div>
-          <h3>Reports</h3>
+          <h3 className="rep">Reports</h3>
           <div className="CandidateTable">
             <table>
-              <tr>
+              <tr className="tr-tabela">
                 <th>Company</th>
                 <th>Interview Date</th>
                 <th>Status</th>

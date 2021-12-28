@@ -2,11 +2,12 @@
   display: flex;
   border: rgb(0, 0, 0) solid 1px;
   min-height: calc(100vh - 37px - 37px - 16px);
+  background-color: #232a34;
 }
 
 .left {
   width: 35%;
-  border: solid 1px red;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -15,14 +16,15 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 1px solid red;
+
     padding-left: 150px;
     p {
       padding: 10px 0;
       font-size: 25px;
+      color: rgba(255, 255, 255, 0.61);
     }
     span {
-      border: 1px solid black;
+      border: 1px solid rgba(255, 255, 255, 0.61);
       border-radius: 100%;
       font-size: 25px;
       padding: 5px 10px;
@@ -32,6 +34,13 @@
   .picked {
     padding: 0 0 100px 150px;
     font-size: 20px;
+
+    p{
+      color: rgba(255, 255, 255, 0.61);
+    }
+    h2{
+      color: #05a081;
+    }
   }
 }
 .right {

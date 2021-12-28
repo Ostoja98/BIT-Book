@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./AdminPage.scss";
 import AdminCard from "../../Component/AdminCard/AdminCard";
 import ModalDetails from "../../Component/ModalDetails/ModalDetails";
+import { BsSearch } from "react-icons/bs";
 
 const AdminPage = (props) => {
   const [reportSearch, setReportSearch] = useState("");
@@ -12,6 +13,7 @@ const AdminPage = (props) => {
   return (
     <div className="AdminPage">
       <div className="searchAdmin">
+        <BsSearch className="lupica"/>
         <input
           type="text"
           placeholder="Search"

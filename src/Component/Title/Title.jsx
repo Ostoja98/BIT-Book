@@ -7,15 +7,15 @@ const Title = (props) => {
   return (
     <div className="Title">
       <h1>Interviews Reports</h1>
-      <button>
+      <button className="titilebtn">
         <Link to="/">Candidate</Link>
       </button>
       {props.isLogin != "undefined" && props.isLogin != null && (
         <>
-          <button>
+          <button className="titilebtn">
             <Link to="/adminPage">Reports</Link>
           </button>
-          <button>
+          <button className="titilebtn">
             <Link to="/wizard">Create Reports</Link>
           </button>
         </>

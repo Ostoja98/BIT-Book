@@ -26,17 +26,20 @@ const ModalLog = (props) => {
             props.setShowLog(false);
           }}
         >
+          
           <GrClose />
         </button>
         <h3>
-          LOGIN <FaUserTie />
+          <FaUserTie />
         </h3>
         <input
+        className="input"
           type="text"
           placeholder="Username"
           onChange={(e) => setMail(e.target.value)}
         ></input>
         <input
+        className="input"
           type="password"
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}

@@ -3,7 +3,7 @@ import "./HomePage.scss";
 import CandidateCard from "../../Component/CandidateCard/CandidateCard";
 import ModalLog from "../../Component/ModalLog/ModalLog";
 import { Link } from "react-router-dom";
-
+import { BsSearch } from "react-icons/bs";
 const HomePage = (props) => {
   const [searchHome, setSearchHome] = useState("");
   return (
@@ -16,17 +16,23 @@ const HomePage = (props) => {
           setIsLogin={props.setIsLogin}
         />
       )}
-
+      <div className="heroimg">
+        <h1>We belive in our clients</h1>
+      </div>
       <div className="subtitle">
         <h2>Candidates</h2>
-
-        <input
-          type="text"
-          placeholder="Search"
-          name="search"
-          onChange={(e) => setSearchHome(e.target.value)}
-        ></input>
+        <div>
+          <BsSearch className="lupica" />
+          <input
+            className="homesearch"
+            type="text"
+            placeholder="Search"
+            name="search"
+            onChange={(e) => setSearchHome(e.target.value)}
+          ></input>
+        </div>
       </div>
+
       <div className="CardList">
         {props.fetchResults[1]
           .filter((e) => {

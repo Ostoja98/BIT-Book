@@ -11,16 +11,18 @@ const ReportRow = (props) => {
         <td>{props.e.companyName}</td>
         <td>{moment(props.e.interviewDate).format("DD-MM-YYYY")}</td>
         <td>
-          {props.e.status}
-          <button
-            className="oko"
-            onClick={() => {
-              props.setPickedElement(props.e);
-              props.setShowModal(true);
-            }}
-          >
-            <BsEye />
-          </button>
+          <div className="pasedoko">
+            {props.e.status}
+            <button
+              className="oko"
+              onClick={() => {
+                props.setPickedElement(props.e);
+                props.setShowModal(true);
+              }}
+            >
+              <BsEye />
+            </button>
+          </div>
         </td>
       </tr>
     </>

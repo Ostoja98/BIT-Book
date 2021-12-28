@@ -2,11 +2,13 @@ import React from "react";
 import "./SelectCompany.scss";
 import ReportCompany from "../../ReportCompany/ReportCompany";
 import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
+import { BsSearch } from "react-icons/bs"
 
 const SelectCompany = (props) => {
   return (
     <div className="wizardpage2">
       <div className="searchWiz">
+        <BsSearch className="lupica"/>
         <input
           type="text"
           placeholder="Search"

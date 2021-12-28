@@ -27,7 +27,7 @@ const Fill = (props) => {
             type="date"
             onChange={(e) => setInterviewDate(e.target.value)}
             max={moment().format("YYYY-MM-DD")}
-          ></input>
+            ></input>
         </label>
         <label for="Phase">
           Phase
@@ -35,7 +35,7 @@ const Fill = (props) => {
             name="Phase"
             id="Phase"
             onChange={(e) => setPhase(e.target.value)}
-          >
+            >
             <option value="CV">CV</option>
             <option value="HR">HR</option>
             <option value="Technical">Technical</option>
@@ -47,7 +47,7 @@ const Fill = (props) => {
             name="status"
             id="status"
             onChange={(e) => setStatus(e.target.value)}
-          >
+            >
             <option value="Passed">Passed</option>
             <option value="Declined">Declined</option>
           </select>
@@ -55,6 +55,7 @@ const Fill = (props) => {
       </div>
       <div className="text">
         <label for="notes">
+          <h2>Notes</h2>
           <textarea
             required
             name=""

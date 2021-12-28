@@ -14,8 +14,9 @@ const Wizard = (props) => {
       <div className="left">
         <div className="stage">
           {pageWiz === 0 ? (
-            <p style={{ color: "red" }}>
-              <span style={{ borderColor: "red" }}>1</span>Select Candidate
+            <p style={{ color: "#05a081" }}>
+              <span style={{ borderColor: "#05a081" }}>1</span>
+              Select Candidate
             </p>
           ) : (
             <p>
@@ -23,8 +24,9 @@ const Wizard = (props) => {
             </p>
           )}
           {pageWiz === 1 ? (
-            <p style={{ color: "red" }}>
-              <span style={{ borderColor: "red" }}>2</span>Select Company
+            <p style={{ color: "#05a081" }}>
+              <span style={{ borderColor: "#05a081" }}>2</span>
+              Select Company
             </p>
           ) : (
             <p>
@@ -32,8 +34,9 @@ const Wizard = (props) => {
             </p>
           )}
           {pageWiz === 2 ? (
-            <p style={{ color: "red" }}>
-              <span style={{ borderColor: "red" }}>3</span>Fill Report Details
+            <p style={{ color: "#05a081" }}>
+              <span style={{ borderColor: "#05a081" }}>3</span>
+              Fill Report Details
             </p>
           ) : (
             <p>

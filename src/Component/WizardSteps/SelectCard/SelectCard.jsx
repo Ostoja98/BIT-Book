@@ -3,11 +3,13 @@ import "./SelectCard.scss";
 import ReportCard from "../../ReportCard/ReportCard";
 //FaArrowCircleRight
 import { FaArrowCircleRight } from "react-icons/fa";
+import { BsSearch } from "react-icons/bs";
 
 const SelectCard = (props) => {
   return (
     <div className="wizardpage1">
       <div className="searchWiz">
+        <BsSearch className="lupica"/>
         <input
           type="text"
           placeholder="Search"
