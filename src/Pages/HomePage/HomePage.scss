@@ -50,6 +50,18 @@
 a {
   text-decoration: none;
 }
+::-webkit-input-placeholder {
+  color: #05a081;
+}
+::-moz-placeholder {
+  color: #05a081;
+}
+:-ms-input-placeholder {
+  color: #05a081;
+}
+::-ms-input-placeholder {
+  color: #05a081;
+}
 ::placeholder {
   color: #05a081;
 }

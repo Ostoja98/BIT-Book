@@ -7,7 +7,6 @@ import ModalLog from "../../Component/ModalLog/ModalLog";
 import moment from "moment";
 
 const DetailsPage = (props) => {
-  // const [candidate, setCandidate] = useState();
   useEffect(() => {
     props.setShowModal(false);
   }, []);
@@ -16,30 +15,10 @@ const DetailsPage = (props) => {
   let candidate = props.fetchResults[1].find((e) => {
     return e.id == id;
   });
-  console.log(candidate);
   if (candidate)
     return (
       <>
-        {props.showLog && (
-          <ModalLog
-            isLogin={props.isLogin}
-            setIsLogin={props.setIsLogin}
-            setShowLog={props.setShowLog}
-            showLog={props.showLog}
-            clickedButton={props.clickedButton}
-          />
-        )}
-
         <div className="candidateCardContainer">
-          {props.showModal && (
-            <ModalDetails
-              fetchResults={props.fetchResults}
-              candidate={candidate}
-              setShowModal={props.setShowModal}
-              pickedElement={props.pickedElement}
-            />
-          )}
-
           <div className="CandidateCards">
             <div className="Candidateimage">
               <img src={candidate.avatar} alt="pera" />
@@ -88,6 +67,24 @@ const DetailsPage = (props) => {
             </table>
           </div>
         </div>
+        {props.showLog && (
+          <ModalLog
+            isLogin={props.isLogin}
+            setIsLogin={props.setIsLogin}
+            setShowLog={props.setShowLog}
+            showLog={props.showLog}
+            clickedButton={props.clickedButton}
+          />
+        )}
+
+        {props.showModal && (
+          <ModalDetails
+            fetchResults={props.fetchResults}
+            candidate={candidate}
+            setShowModal={props.setShowModal}
+            pickedElement={props.pickedElement}
+          />
+        )}
       </>
     );
   else return null;

@@ -6,9 +6,9 @@ import "./Title.scss";
 const Title = (props) => {
   return (
     <div className="Title">
-      <h1>Interviews Reports</h1>
+      <h1>Interview Reports</h1>
       <button className="titilebtn">
-        <Link to="/">Candidate</Link>
+        <Link to="/">Candidates</Link>
       </button>
       {props.isLogin != "undefined" && props.isLogin != null && (
         <>
@@ -16,7 +16,7 @@ const Title = (props) => {
             <Link to="/adminPage">Reports</Link>
           </button>
           <button className="titilebtn">
-            <Link to="/wizard">Create Reports</Link>
+            <Link to="/wizard">Create Report</Link>
           </button>
         </>
       )}

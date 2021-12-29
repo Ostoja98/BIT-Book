@@ -1,10 +1,13 @@
 import React from "react";
 import "./Header.scss";
-import { Link } from "react-router-dom";
 import { FaHandSpock } from "react-icons/fa";
+import { useHistory } from "react-router-dom";
+
 const Header = (props) => {
+  const history = useHistory();
+
   return (
-    <div className="Header">
+    <div className="Header pointer" onClick={() => history.push("/")}>
       <h1>
         B1T
         <FaHandSpock />

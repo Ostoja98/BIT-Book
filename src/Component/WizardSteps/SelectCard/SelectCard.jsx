@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./SelectCard.scss";
 import ReportCard from "../../ReportCard/ReportCard";
 //FaArrowCircleRight
@@ -8,8 +8,8 @@ import { BsSearch } from "react-icons/bs";
 const SelectCard = (props) => {
   return (
     <div className="wizardpage1">
-      <div className="searchWiz">
-        <BsSearch className="lupica"/>
+      <div className="searchWiz ">
+        <BsSearch className="lupica" />
         <input
           type="text"
           placeholder="Search"
@@ -32,11 +32,12 @@ const SelectCard = (props) => {
               <ReportCard
                 setSelectedCandidate={props.setSelectedCandidate}
                 e={e}
+                selectedCandidate={props.selectedCandidate}
               />
             );
           })}
         <button
-          className="btnwiz"
+          className="btnwiz pointer"
           onClick={() => {
             props.setSearchWiz("");
             props.setPageWiz(props.pageWiz + 1);

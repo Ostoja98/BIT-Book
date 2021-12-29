@@ -3,9 +3,12 @@ import "./AdminPage.scss";
 import AdminCard from "../../Component/AdminCard/AdminCard";
 import ModalDetails from "../../Component/ModalDetails/ModalDetails";
 import { BsSearch } from "react-icons/bs";
+import ModalDelete from "../../Component/ModalDelete/ModalDelete";
 
 const AdminPage = (props) => {
   const [reportSearch, setReportSearch] = useState("");
+  const [deleteModal, setDeleteModal] = useState(false);
+
   useEffect(() => {
     props.setShowModal(false);
   }, []);
@@ -13,7 +16,7 @@ const AdminPage = (props) => {
   return (
     <div className="AdminPage">
       <div className="searchAdmin">
-        <BsSearch className="lupica"/>
+        <BsSearch className="lupica" />
         <input
           type="text"
           placeholder="Search"
@@ -44,6 +47,7 @@ const AdminPage = (props) => {
                 setShowModal={props.setShowModal}
                 showModal={props.showModal}
                 setPickedElement={props.setPickedElement}
+                setDeleteModal={setDeleteModal}
               />
             );
           })}
@@ -54,6 +58,14 @@ const AdminPage = (props) => {
           pickedElement={props.pickedElement}
           setShowModal={props.setShowModal}
           fetchResults={props.fetchResults}
+        />
+      )}
+      {deleteModal && (
+        <ModalDelete
+          setDeleteModal={setDeleteModal}
+          e={props.pickedElement}
+          setReload={props.setReload}
+          reload={props.reload}
         />
       )}
     </div>

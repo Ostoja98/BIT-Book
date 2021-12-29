@@ -4,7 +4,11 @@ import "./ReportCard.scss";
 const ReportCard = (props) => {
   return (
     <div
-      className="ReportCards"
+      className={
+        props.selectedCandidate.id === props.e.id
+          ? "clicked ReportCards pointer"
+          : "ReportCards pointer"
+      }
       onClick={() => props.setSelectedCandidate(props.e)}
     >
       <div className="slika">

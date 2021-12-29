@@ -1,7 +1,7 @@
 .Wizard {
   display: flex;
   border: rgb(0, 0, 0) solid 1px;
-  min-height: calc(100vh - 37px - 37px - 16px);
+  min-height: calc(100vh - (40px + 38px + 17px));
   background-color: #232a34;
 }
 
@@ -35,10 +35,10 @@
     padding: 0 0 100px 150px;
     font-size: 20px;
 
-    p{
+    p {
       color: rgba(255, 255, 255, 0.61);
     }
-    h2{
+    h2 {
       color: #05a081;
     }
   }

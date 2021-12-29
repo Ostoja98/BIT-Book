@@ -3,6 +3,7 @@ import "./AdminCard.scss";
 import moment from "moment";
 import { BsEye } from "react-icons/bs";
 import { GrClose } from "react-icons/gr";
+import ModalDelete from "../../Component/ModalDelete/ModalDelete";
 
 const AdminCard = (props) => {
   return (
@@ -15,6 +16,7 @@ const AdminCard = (props) => {
       <div className="status">{props.e.status}</div>
       <div className="button">
         <button
+          className="pointer"
           onClick={() => {
             props.setPickedElement(props.e);
             props.setShowModal(true);
@@ -23,25 +25,23 @@ const AdminCard = (props) => {
           <BsEye />
         </button>
         <button
+          className="pointer"
           onClick={() => {
-            fetch(`http://localhost:3333/api/reports/${props.e.id}`, {
-              method: "DELETE",
-              headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-              },
-              // body: JSON.stringify(props.e),
-            }).then((res) => {
-              console.log(res);
-              // console.log(token);
-              props.setReload(!props.reload);
-            });
+            props.setDeleteModal(true);
+            props.setPickedElement(props.e);
           }}
         >
           <GrClose />
         </button>
       </div>
+      {/* {props.deleteModal && (
+        <ModalDelete
+          setDeleteModal={props.setDeleteModal}
+          e={props.e}
+          setReload={props.setReload}
+          reload={props.reload}
+        />
+      )} */}
     </div>
   );
 };

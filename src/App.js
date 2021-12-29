@@ -18,7 +18,6 @@ function App() {
   const [company, setCompany] = useState([]);
   const [candidates, setCandidates] = useState([]);
   const [reports, setReports] = useState([]);
-  const [users, setUsers] = useState([]);
   const [pickedElement, setPickedElement] = useState();
   const [showLog, setShowLog] = useState(false);
   const [showModal, setShowModal] = useState(false);

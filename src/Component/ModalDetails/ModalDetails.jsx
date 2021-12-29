@@ -17,9 +17,8 @@ const ModalDetails = (props) => {
       <div className="ModalDetails">
         <div className="nameModal">
           <h2>Modal Details</h2>
-          <button onClick={() => props.setShowModal(false)}>
-            {" "}
-            <GrClose />{" "}
+          <button className="pointer" onClick={() => props.setShowModal(false)}>
+            <GrClose />
           </button>
         </div>
         <div className="img">

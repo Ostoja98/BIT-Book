@@ -3,7 +3,11 @@ import "./ReportCompany.scss";
 const ReportCompany = (props) => {
   return (
     <div
-      className="reportcompany"
+      className={
+        props.e.id === props.selectedCompany.id
+          ? "reportcompany clicked pointer"
+          : "reportcompany pointer"
+      }
       onClick={() => props.setSelectedCompany(props.e)}
     >
       {props.e.name}

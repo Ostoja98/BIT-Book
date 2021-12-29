@@ -14,7 +14,7 @@ const ReportRow = (props) => {
           <div className="pasedoko">
             {props.e.status}
             <button
-              className="oko"
+              className="oko pointer"
               onClick={() => {
                 props.setPickedElement(props.e);
                 props.setShowModal(true);

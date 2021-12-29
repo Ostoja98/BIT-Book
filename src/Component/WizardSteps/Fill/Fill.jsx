@@ -10,11 +10,11 @@ const Fill = (props) => {
   const [note, setNote] = useState("");
   const [phase, setPhase] = useState("CV");
   const [status, setStatus] = useState("Passed");
+  console.log(interviewDate);
 
   const history = useHistory();
 
   const token = props.isLogin;
-  console.log(token);
 
   return (
     <div className="Fill">
@@ -22,20 +22,22 @@ const Fill = (props) => {
         <label for="phase">
           Date:
           <input
+            className="pointer"
             id="phase"
             required
             type="date"
             onChange={(e) => setInterviewDate(e.target.value)}
             max={moment().format("YYYY-MM-DD")}
-            ></input>
+          ></input>
         </label>
         <label for="Phase">
           Phase
           <select
+            className="pointer"
             name="Phase"
             id="Phase"
             onChange={(e) => setPhase(e.target.value)}
-            >
+          >
             <option value="CV">CV</option>
             <option value="HR">HR</option>
             <option value="Technical">Technical</option>
@@ -44,10 +46,11 @@ const Fill = (props) => {
         <label for="status">
           Status
           <select
+            className="pointer"
             name="status"
             id="status"
             onChange={(e) => setStatus(e.target.value)}
-            >
+          >
             <option value="Passed">Passed</option>
             <option value="Declined">Declined</option>
           </select>
@@ -57,22 +60,23 @@ const Fill = (props) => {
         <label for="notes">
           <h2>Notes</h2>
           <textarea
-            required
             name=""
             id="notes"
             cols="30"
             rows="10"
+            placeholder="Type at least 20 charaters..."
             onChange={(e) => setNote(e.target.value)}
           ></textarea>
-          <div className="btnwiz3">
+          <div className="btnwiz3 pointer">
             <button
-              className="btnwiz"
+              className="btnwiz pointer"
               onClick={() => props.setPageWiz(props.pageWiz - 1)}
             >
               <FaArrowCircleLeft />
             </button>
             <button
               className="btnwiz"
+              disabled={interviewDate === "" || note.length < 20}
               type="button"
               onClick={() => {
                 fetch(`http://localhost:3333/api/reports`, {

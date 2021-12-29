@@ -7,7 +7,7 @@ import { GrClose } from "react-icons/gr";
 const ModalLog = (props) => {
   const [mail, setMail] = useState("");
   const [pass, setPassword] = useState("");
-  const [timesTried, changeTimesTried] = useState(false);
+  const [error, setError] = useState(null);
 
   const close = () => {
     if (!(props.isLogin == "undefined" || props.isLogin == null)) {
@@ -21,30 +21,30 @@ const ModalLog = (props) => {
     <div className="ModalContainer">
       <div className="ModalLogIn">
         <button
-          className="ugasi"
+          className="ugasi pointer"
           onClick={() => {
             props.setShowLog(false);
           }}
         >
-          
           <GrClose />
         </button>
         <h3>
           <FaUserTie />
         </h3>
         <input
-        className="input"
+          className="input"
           type="text"
           placeholder="Username"
           onChange={(e) => setMail(e.target.value)}
         ></input>
         <input
-        className="input"
+          className="input"
           type="password"
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
         ></input>
         <button
+          className="pointer"
           onClick={() => {
             fetch("http://localhost:3333/login", {
               method: "POST",
@@ -54,16 +54,21 @@ const ModalLog = (props) => {
 
               body: JSON.stringify({ email: mail, password: pass }),
             })
-              .then((data) => data.json())
+              .then((data) => {
+                if (!data.ok) throw Error("Email or Password are invalid.");
+                return data.json();
+              })
               .then((data) => {
                 localStorage.setItem("accessToken", data.accessToken);
                 props.setIsLogin(localStorage.getItem("accessToken"));
                 history.push("/adminPage");
-              });
+              })
+              .catch((err) => setError(err.message));
           }}
         >
           LogIn
         </button>
+        {error && <h2>{error}</h2>}
       </div>
     </div>
   );
